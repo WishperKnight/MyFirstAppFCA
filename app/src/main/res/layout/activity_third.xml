@@ -22,25 +22,26 @@
         <TextView
             android:id="@+id/tvPlainText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Plain Text:"/>
 
         <TextView
             android:id="@+id/tvNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Number" />
 
         <TextView
             android:id="@+id/tvDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="decimal" />
 
         <TextView
             android:id="@+id/tvSwitchState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="switch State" />
 
         <Button
             android:id="@+id/btnGoMainPage"
