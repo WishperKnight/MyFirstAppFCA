@@ -40,7 +40,18 @@ public class ThirdActivity extends AppCompatActivity {
         tvPlainTextView.setText("Plain text: "+getData.getStringExtra("plainText"));
         tvPlainTextView.setText("Number: "+getData.getStringExtra("number"));
         tvPlainTextView.setText("Decimal: "+getData.getStringExtra("decimal"));
-        tvPlainTextView.setText("Switch state: "+getData.getStringExtra("switch").toString());
+        tvPlainTextView.setText("Switch state: "+booleanState(getData.getBooleanExtra("switch")));
+
+    }
+    private String booleanState(boolean state){
+
+        String booleanState="true";
+        if (state==true){
+            return booleanState;
+        }else{
+            booleanState="false";
+            return booleanState;
+        }
 
     }
 }
