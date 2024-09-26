@@ -20,32 +20,32 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="Welcome to the 3º Activity"
+            android:text="@string/welcome_to_the_3_activity"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tvPlainText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Plain Text:"/>
+            android:text="@string/plain_text"/>
 
         <TextView
             android:id="@+id/tvNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Number" />
+            android:text="@string/number" />
 
         <TextView
             android:id="@+id/tvDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="decimal" />
+            android:text="@string/decimal" />
 
         <TextView
             android:id="@+id/tvSwitchState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="switch State" />
+            android:text="@string/switch_state" />
 
         <Button
             android:id="@+id/btnGoMainPage"
@@ -55,6 +55,6 @@
             android:layout_marginTop="25dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="Back to main Activity" />
+            android:text="@string/back_to_main_activity" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

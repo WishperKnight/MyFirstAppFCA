@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MyFirstAppFCA</string>
+    <string name="clear">Clear</string>
+    <string name="send_data">Send data</string>
+    <string name="write_decimals_here">Write decimals here...</string>
+    <string name="write_numbers_here">Write numbers here...</string>
+    <string name="plain_text_here">Plain text here...</string>
+    <string name="choose">Choose</string>
+    <string name="write_your_message">Write your message</string>
+    <string name="myfirstappfca">MyFirstAppFCA</string>
+    <string name="send_message">Send message</string>
+    <string name="back_to_main_activity">Back to main Activity</string>
+    <string name="decimal">decimal</string>
+    <string name="number">Number</string>
+    <string name="plain_text">Plain Text:</string>
+    <string name="switch_state">switch State</string>
+    <string name="welcome_to_the_3_activity">Welcome to the 3º Activity</string>
 </resources>

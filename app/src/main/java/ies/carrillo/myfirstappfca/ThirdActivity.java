@@ -1,5 +1,6 @@
 package ies.carrillo.myfirstappfca;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ public class ThirdActivity extends AppCompatActivity {
     /**
      * Metodo para cargar los componenetes de la vista
      */
+    @SuppressLint("SetTextI18n")
     private void loadingComponents() {
 
         //Declaramos los componenetes
@@ -38,7 +40,7 @@ public class ThirdActivity extends AppCompatActivity {
         Intent getData = getIntent();
         // Log.i("Datos", getData.getData().toString());
         //Rellenamos ls campos con los datos pasados por el intent de la SecondActivity
-        tvPlainTextView.setText("Plain text: " + getData.getStringExtra("plainText").toString());
+        tvPlainTextView.setText("Plain text: " + getData.getStringExtra("plainText"));
         tvNumber.setText("Number: " + getData.getIntExtra("number", 0));
         tvDecimal.setText("Decimal: " + getData.getDoubleExtra("decimal", 0.0));
         String estado = booleanState(getData.getBooleanExtra("switch", true));
@@ -51,7 +53,7 @@ public class ThirdActivity extends AppCompatActivity {
     private String booleanState(boolean state) {
 
         String booleanState = "true";
-        if (state != true) {
+        if (!state) {
             booleanState = "false";
             return booleanState;
         }

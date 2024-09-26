@@ -22,16 +22,19 @@
             android:background="@color/pink"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:text="Write your message" />
+            android:text="@string/write_your_message" />
 
         <EditText
             android:id="@+id/etText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/plain_text_here"
             android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
             android:textStyle="italic"
-            android:hint="Plain text here..." />
+            tools:ignore="Autofill,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -39,46 +42,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/write_numbers_here"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
             android:textStyle="italic"
-            android:hint="Write numbers here..."
-            android:inputType="number" />
+            tools:ignore="Autofill,VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/etDecimals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:textStyle="italic"
+            android:hint="@string/write_decimals_here"
             android:inputType="numberDecimal"
-            android:hint="Write decimals here..."/>
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            android:textStyle="italic"
+            tools:ignore="Autofill,VisualLintTextFieldSize" />
 
         <Switch
             android:id="@+id/switch1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose "
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+            android:minHeight="48dp"
+            android:text="@string/choose"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
 
         <LinearLayout
+            style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnClear"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/cancel_button_color"
-                android:text="Clear" />
+                android:text="@string/clear"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/btnBack"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/back_button_color"
-                android:text="Back" />
+                android:text="Back"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
         </LinearLayout>
 
         <Button
@@ -88,7 +103,8 @@
             android:textColor="@color/black"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginTop="25dp"
-            android:text="Send data" />
+            android:text="@string/send_data"
+            tools:ignore="VisualLintButtonSize" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,6 +112,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:src="@drawable/hello_kitty_second"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

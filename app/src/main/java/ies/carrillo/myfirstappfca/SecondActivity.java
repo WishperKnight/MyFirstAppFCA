@@ -1,5 +1,6 @@
 package ies.carrillo.myfirstappfca;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         EditText etText = findViewById(R.id.etText);
         EditText etNumber = findViewById(R.id.etNumbers);
         EditText etDecimal = findViewById(R.id.etDecimals);
-        Switch choose = findViewById(R.id.switch1);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch choose = findViewById(R.id.switch1);
         Button btnSend = findViewById(R.id.btnSendData);
         Button btnClear = findViewById(R.id.btnClear);
         Button btnBack = findViewById(R.id.btnBack);
@@ -61,7 +62,7 @@ public class SecondActivity extends AppCompatActivity {
                     boolean switch1 = choose.isChecked();
                     //Comprobacion del estado del switch
                     String switchState;
-                    if (switch1 == true) {
+                    if (switch1) {
                         switchState = "true";
                     } else {
                         switchState = "false";
@@ -87,7 +88,7 @@ public class SecondActivity extends AppCompatActivity {
                 }
 
             } catch (Exception e) {
-                toast.setText(e.getMessage().toString());
+                toast.setText(e.getMessage());
                 toast.show();
                 e.printStackTrace();
                 e.getMessage();
