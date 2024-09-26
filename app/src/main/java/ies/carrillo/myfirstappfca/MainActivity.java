@@ -28,12 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-
         super.onStart();
-
-
         Log.i("Ciclo de vida", "Ha entrado en el modo onStart");
-
     }
 
     @Override
