@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,39 +41,58 @@ public class SecondActivity extends AppCompatActivity {
         //declare the intent
         Intent goThirdView = new Intent(this, ThirdActivity.class);
         Intent goMain = new Intent(this, MainActivity.class);
-
+        //declare the toast for the errors
+        int duration = Toast.LENGTH_SHORT;
+        String text = "Error";
+        Toast toast = Toast.makeText(this, text, duration);
         //declare the action of the  button
         btnSend.setOnClickListener(v -> {
-            String message = etText.getText().toString();
-            String numbers = etNumber.getText().toString();
-            String decimals = etDecimal.getText().toString();
+            try {
+                if (etText.length() > 0 && etDecimal.length() > 0 && etNumber.length() > 0) {
+                    //save the values of the et into string variables
+                    String message = etText.getText().toString();
+                    String numbers = etNumber.getText().toString();
+                    String decimals = etDecimal.getText().toString();
 
-            //Casting de string a numero
-            int number = Integer.parseInt(numbers);
-            double decimal = Double.parseDouble(decimals);
-            //Captura del estado del switch
-            boolean switch1 = choose.isChecked();
-            //Comprobacion del estado del switch
-            String switchState;
-            if (switch1 == true) {
-                switchState = "true";
-            } else {
-                switchState = "false";
+                    //Casting de string a numero
+                    int number = Integer.parseInt(numbers);
+                    double decimal = Double.parseDouble(decimals);
+                    //Captura del estado del switch
+                    boolean switch1 = choose.isChecked();
+                    //Comprobacion del estado del switch
+                    String switchState;
+                    if (switch1 == true) {
+                        switchState = "true";
+                    } else {
+                        switchState = "false";
+                    }
+
+                    //Log para controlar los datos que se pasan de un Intent al otro
+                    Log.i("este es el valor del entero", numbers);
+                    Log.i("este es el valor del texto", message);
+                    Log.i("este es el valor del decimal", decimals);
+                    Log.i("este es el valor del switch", switchState);
+
+                    //Enviamos los datos de un Intent a otro
+                    goThirdView.putExtra("plainText", message);
+                    goThirdView.putExtra("number", number);
+                    goThirdView.putExtra("decimal", decimal);
+                    goThirdView.putExtra("switch", switch1);
+
+                    //Lanzamos la el Intent
+                    startActivity(goThirdView);
+                } else {
+                    toast.setText("Fields can´t be empty");
+                    toast.show();
+                }
+
+            } catch (Exception e) {
+                toast.setText(e.getMessage().toString());
+                toast.show();
+                e.printStackTrace();
+                e.getMessage();
             }
-            //Log para controlar los datos que se pasan de un Intent al otro
-            Log.i("este es el valor del entero", numbers);
-            Log.i("este es el valor del texto", message);
-            Log.i("este es el valor del decimal", decimals);
-            Log.i("este es el valor del switch", switchState);
 
-            //Enviamos los datos de un Intent a otro
-            goThirdView.putExtra("plainText", message);
-            goThirdView.putExtra("number", number);
-            goThirdView.putExtra("decimal", decimal);
-            goThirdView.putExtra("switch", switch1);
-
-            //Lanzamos la el Intent
-            startActivity(goThirdView);
 
             //Comprobamos que todo ha ido bien
             Log.i("Datos enviados", "Se han enviado los datos");
@@ -84,6 +104,7 @@ public class SecondActivity extends AppCompatActivity {
             etText.setText("");
             etNumber.setText("");
             etDecimal.setText("");
+            choose.setChecked(false);
         });
 
 

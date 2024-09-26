@@ -13,8 +13,12 @@
 
         <TextView
             android:id="@+id/tvThirdActivity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:background="@color/pink"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:text="Welcome to the 3º Activity"
             android:textSize="24sp" />
@@ -49,6 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:text="Back to main Activity" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
