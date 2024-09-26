@@ -14,10 +14,13 @@
 
         <TextView
             android:id="@+id/tvSecondActivity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:textSize="24sp"
             android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:background="@color/pink"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="Write your message" />
 
@@ -56,12 +59,43 @@
             android:text="Choose "
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cancel_button_color"
+                android:text="Clear" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/back_button_color"
+                android:text="Back" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnSendData"
-            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="25dp"
+            android:text="Send data" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="Send data" />
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/hello_kitty_second"
+            android:adjustViewBounds="true"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

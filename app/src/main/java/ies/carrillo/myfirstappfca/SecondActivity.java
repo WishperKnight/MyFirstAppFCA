@@ -28,40 +28,67 @@ public class SecondActivity extends AppCompatActivity {
     public void loadingComponents() {
 
         //Declare the components of the view
-        Button btnSend = findViewById(R.id.btnSendData);
         EditText etText = findViewById(R.id.etText);
         EditText etNumber = findViewById(R.id.etNumbers);
         EditText etDecimal = findViewById(R.id.etDecimals);
         Switch choose = findViewById(R.id.switch1);
+        Button btnSend = findViewById(R.id.btnSendData);
+        Button btnClear = findViewById(R.id.btnClear);
+        Button btnBack = findViewById(R.id.btnBack);
+
 
         //declare the intent
         Intent goThirdView = new Intent(this, ThirdActivity.class);
+        Intent goMain = new Intent(this, MainActivity.class);
 
         //declare the action of the  button
         btnSend.setOnClickListener(v -> {
             String message = etText.getText().toString();
-            String number = etNumber.getText().toString();
-            String decimal = etDecimal.getText().toString();
-            boolean switch1 = choose.isActivated();
+            String numbers = etNumber.getText().toString();
+            String decimals = etDecimal.getText().toString();
+
+            //Casting de string a numero
+            int number = Integer.parseInt(numbers);
+            double decimal = Double.parseDouble(decimals);
+            //Captura del estado del switch
+            boolean switch1 = choose.isChecked();
+            //Comprobacion del estado del switch
             String switchState;
             if (switch1 == true) {
                 switchState = "true";
-            }else {
-                switchState="false";
+            } else {
+                switchState = "false";
             }
-            Log.i("este es el valor del entero", number);
+            //Log para controlar los datos que se pasan de un Intent al otro
+            Log.i("este es el valor del entero", numbers);
             Log.i("este es el valor del texto", message);
-            Log.i("este es el valor del decimal", decimal);
+            Log.i("este es el valor del decimal", decimals);
             Log.i("este es el valor del switch", switchState);
 
+            //Enviamos los datos de un Intent a otro
             goThirdView.putExtra("plainText", message);
             goThirdView.putExtra("number", number);
             goThirdView.putExtra("decimal", decimal);
             goThirdView.putExtra("switch", switch1);
 
+            //Lanzamos la el Intent
             startActivity(goThirdView);
-            Log.i("Datos enviados","Se han enviado los datos");
+
+            //Comprobamos que todo ha ido bien
+            Log.i("Datos enviados", "Se han enviado los datos");
 
         });
+
+        //agregamos la funcion para que limpie los edit text
+        btnClear.setOnClickListener(v -> {
+            etText.setText("");
+            etNumber.setText("");
+            etDecimal.setText("");
+        });
+
+
+        btnBack.setOnClickListener(v -> startActivity(goMain)
+        );
     }
+
 }
